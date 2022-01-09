@@ -198,4 +198,4 @@ jobs:
     - name: PUSHPLUS信息通知
       if: steps.tag.outputs.status == 'success' && env.SERVERCHAN_SCKEY == 'true'
       run: |
-        curl -k --data token="${{ secrets.PUSH_PLUS_TOKEN }}" --data title="OpenWrt-firmware开始编译Redmi-AC2100编译成功" --data "content=我亲爱的✨主人✨：您使用OpenWrt-firmware仓库编译的Redmi-AC2100固件${{ steps.tag.outputs.release_tag }}已顺利编译完成了！💐" "http://www.pushplus.plus/send"
+        curl -k --data token="${{ secrets.PUSH_PLUS_TOKEN }}" --data title="OpenWrt-firmware编译Redmi-AC2100成功" --data "content=我亲爱的✨主人✨：您使用OpenWrt-firmware仓库编译的Redmi-AC2100固件${{ steps.tag.outputs.release_tag }}已顺利编译完成了！💐" "http://www.pushplus.plus/send"
