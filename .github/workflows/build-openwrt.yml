@@ -31,6 +31,7 @@ env:
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: true
+  SERVERCHAN_SCKEY: true
   TZ: Asia/Shanghai
 
 jobs:
@@ -88,6 +89,11 @@ jobs:
       env:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+
+    - name: PUSHPLUS信息通知
+      if: env.SERVERCHAN_SCKEY == 'true'
+      run: |
+        curl -k --data token="${{ secrets.PUSH_PLUS_TOKEN }}" --data title="OpenWrt-firmware开始编译Redmi-AC2100" --data "content=🎉 主人：您正在使用OpenWrt-firmware仓库编译固件中,请耐心等待...... 😋💐" "http://www.pushplus.plus/send"
 
     - name: 下载编译软件包
       id: package
@@ -188,3 +194,8 @@ jobs:
         delete_tags: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: PUSHPLUS信息通知
+      if: steps.tag.outputs.status == 'success' && env.SERVERCHAN_SCKEY == 'true'
+      run: |
+        curl -k --data token="${{ secrets.PUSH_PLUS_TOKEN }}" --data title="OpenWrt-firmware开始编译Redmi-AC2100编译成功" --data "content=我亲爱的✨主人✨：您使用OpenWrt-firmware仓库编译的Redmi-AC2100固件${{ steps.tag.outputs.release_tag }}已顺利编译完成了！💐" "http://www.pushplus.plus/send"
