@@ -6,6 +6,8 @@
 ![GitHub Stars](https://img.shields.io/github/stars/byncn/OpenWrt-firmware.svg?style=flat-square&label=Stars&logo=github)
 ![GitHub Forks](https://img.shields.io/github/forks/byncn/OpenWrt-firmware.svg?style=flat-square&label=Forks&logo=github)
 
+[![构建OpenWrt-lede](https://github.com/byncn/OpenWrt-firmware/actions/workflows/build-openwrt.yml/badge.svg?branch=main&event=status)](https://github.com/byncn/OpenWrt-firmware/actions/workflows/build-openwrt.yml)
+
 A template for building OpenWrt with GitHub Actions
 
 ## Usage
