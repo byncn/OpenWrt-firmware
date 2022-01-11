@@ -94,7 +94,7 @@ jobs:
       if: env.PUSHPLUS_TOKEN == 'true'
       continue-on-error: true
       run: |
-        curl -k --data token="${{ secrets.PUSH_PLUS_TOKEN }}" --data title="OpenWrt-firmware开始编译Redmi-AC2100" --data "content=🎉 主人：您正在使用OpenWrt-firmware仓库编译固件中,请耐心等待...... 😋💐" "http://www.pushplus.plus/send"
+        curl -k --data token="${{ secrets.PUSH_PLUS_TOKEN }}" --data title="OpenWrt-firmware开始编译Redmi-AC2100" --data "content=🎉 主人：您正在使用OpenWrt-firmware仓库编译固件中,请耐心等待...... 😋💐" --data channel="cp" --data webhook="cp" "http://www.pushplus.plus/send"
 
     - name: 下载编译软件包
       id: package
@@ -199,4 +199,4 @@ jobs:
     - name: PUSHPLUS信息通知
       if: steps.tag.outputs.status == 'success' && env.PUSHPLUS_TOKEN == 'true'
       run: |
-        curl -k --data token="${{ secrets.PUSH_PLUS_TOKEN }}" --data title="OpenWrt-firmware编译Redmi-AC2100成功" --data "content=我亲爱的✨主人✨：您使用OpenWrt-firmware仓库编译的Redmi-AC2100固件${{ steps.tag.outputs.release_tag }}已顺利编译完成了！💐" "http://www.pushplus.plus/send"
+        curl -k --data token="${{ secrets.PUSH_PLUS_TOKEN }}" --data title="OpenWrt-firmware编译Redmi-AC2100成功" --data "content=我亲爱的✨主人✨：您使用OpenWrt-firmware仓库编译的Redmi-AC2100固件${{ steps.tag.outputs.release_tag }}已顺利编译完成了！💐" --data channel="cp" --data webhook="cp" "http://www.pushplus.plus/send"
