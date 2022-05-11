@@ -8,7 +8,7 @@
 
 [![构建OpenWrt-lede](https://github.com/byncn/OpenWrt-firmware/actions/workflows/build-openwrt.yml/badge.svg?branch=main&event=status)](https://github.com/byncn/OpenWrt-firmware/actions/workflows/build-openwrt.yml)
 
-![Release](https://img.shields.io/github/release/RealKiro/Actions-OpenWrt?color=blue)](https://github.com/byncn/OpenWrt-firmware/releases)
+[![Release](https://img.shields.io/github/release/RealKiro/Actions-OpenWrt?color=blue)](https://github.com/byncn/OpenWrt-firmware/releases)
 
 A template for building OpenWrt with GitHub Actions
 
