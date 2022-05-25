@@ -1,8 +1,21 @@
 **English** | [中文](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
-# Actions-OpenWrt
+<h1 align="center">
+  <br>
+  <b>Actions-OpenWrt</b>
+  <br>
+</h1>
+<p align="center">
+    <a href="https://github.com/byncn/OpenWrt-firmware/actions/workflows/build-openwrt.yml">
+        <img src="https://github.com/byncn/OpenWrt-firmware/actions/workflows/build-openwrt.yml/badge.svg"
+            alt="">
+    </a>
+    <a href="https://github.com/byncn/OpenWrt-firmware/releases">
+        <img src="https://img.shields.io/github/release/byncn/OpenWrt-firmware?color=blue"
+            alt="">
+    </a>
+</p>
 
-##### [![LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&label=LICENSE)](https://github.com/P3TERX/Actions-OpenWrt/blob/master/LICENSE)[![构建OpenWrt-lede](https://github.com/byncn/OpenWrt-firmware/actions/workflows/build-openwrt.yml/badge.svg?branch=main&event=status)](https://github.com/byncn/OpenWrt-firmware/actions/workflows/build-openwrt.yml)[![Release](https://img.shields.io/github/release/RealKiro/Actions-OpenWrt?color=blue)](https://github.com/byncn/OpenWrt-firmware/releases)
 
 ##### 使用GitHub Actions构建OpenWrt的模板
 
