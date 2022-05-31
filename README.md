@@ -7,7 +7,7 @@
 </h1>
 <p align="center">
     <a href="https://github.com/byncn/OpenWrt-firmware/actions/workflows/build-openwrt.yml">
-        <img src="https://github.com/byncn/OpenWrt-firmware/actions/workflows/build-openwrt.yml/badge.svg"
+        <img src="https://github.com/byncn/OpenWrt-firmware/actions/workflows/build-openwrt.yml/badge.svg?branch=main"
             alt="">
     </a>
     <a href="https://github.com/byncn/OpenWrt-firmware/releases">
