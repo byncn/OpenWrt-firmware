@@ -88,13 +88,11 @@ jobs:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
-    - name: 开始编译通知
-      uses: easychen/github-action-server-chan@v1.0.0
+    - name: openwrt开始编译通知
+      if: env.PUSHPLUS_TOKEN == 'true'
       continue-on-error: true
-      with: 
-        sendkey: ${{ secrets.sendkey }}
-        title: "OpenWrt-firmware开始编译Redmi-AC2100"
-        desp: "🎉 主人：您正在使用OpenWrt-firmware仓库编译固件中,请耐心等待...... 😋💐"
+      run: |
+        curl -k --data token="${{ secrets.PUSH_PLUS_TOKEN }}" --data title="OpenWrt-firmware开始编译Redmi-AC2100" --data "content=🎉 主人：您正在使用OpenWrt-firmware仓库编译固件中,请耐心等待...... 😋💐" --data channel="webhook" --data webhook="webhook" "http://www.pushplus.plus/send"
 
     - name: 下载编译软件包
       id: package
@@ -178,7 +176,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: 编译成功通知-PUSHPLUS
+    - name: openwrt编译成功通知
       if: steps.tag.outputs.status == 'success' && env.PUSHPLUS_TOKEN == 'true'
       run: |
         curl -k --data token="${{ secrets.PUSH_PLUS_TOKEN }}" --data title="OpenWrt-firmware编译Redmi-AC2100成功" --data "content=我亲爱的✨主人✨：您使用OpenWrt-firmware仓库编译的Redmi-AC2100固件${{ steps.tag.outputs.release_tag }}已顺利编译完成了！💐" --data channel="webhook" --data webhook="webhook" "http://www.pushplus.plus/send"
